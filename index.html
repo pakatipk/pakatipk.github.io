@@ -3,151 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakatip Kasai Portfolio</title>
+  <title>Pakatip's Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap JS (required for navbar collapse) -->
-
-
-
-
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="hero-header">
-    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
-      <div class="container-fluid px-4">
-        <a class="navbar-brand" href="#">
-          <img src="assets/logo.png" alt="Logo" height="50">
-        </a>
-    
-        <!-- Hamburger -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- Links + Toggles -->
-        <div class="collapse navbar-collapse justify-content-center justify-content-md-between align-items-center" id="navbarContent">
-          <!-- Left: Nav links -->
-          <ul class="navbar-nav flex-column flex-md-row align-items-center mb-2 mb-md-0">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
-            <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-    
-          <!-- Right: Toggles -->
-          <div class="d-flex align-items-center gap-3">
-            <i class="fas fa-moon text-secondary"></i>
-            <label class="switch m-0">
-              <input type="checkbox" id="darkModeToggle" />
-              <span class="slider round"></span>
-            </label>
-            <div class="language-toggle ms-2">
-              <a href="#" id="langEN" class="lang-link active">EN</a> |
-              <a href="#" id="langJP" class="lang-link">JP</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    
-    
+  <header>
+    <h1>Pakatip Kasai</h1>
+    <p>Data Analyst | Data Engineer | Portfolio</p>
   </header>
 
-  <!-- About Section -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section id="about">
-    <div  class="about-section">
-      <div class="about-text">
-        <h2>Hi, I'm Bee 👋 </h2>
-        <p>
-          I'm a <strong><span id="position">data analyst</span></strong> and <strong><span id="position">engineer</span></strong>, and a <span id="position"><strong>full-stack web developer</strong></span> in the making.
-        </p>        
-        <p>
-          Over the past few years, I’ve worked on data pipelines, dashboards, and risk systems – helping teams clean, structure, and make sense of their data. I’ve contributed to projects in areas like localization, security, and sustainability.
-        </p>
-        <p>
-          Recently, I’ve been diving deeper into <strong>web development</strong>, learning how to build both <strong>backend</strong> and <strong>frontend</strong> web applications, because I want to bring ideas to life from start to finish.
-        </p>
-        <p>
-          I'm still exploring and expanding my skills every day, and I love connecting with others who are on similar paths.
-        </p>
+    <h2>About Me</h2>
+    <p>
+      I’m a data professional passionate about building automated pipelines, uncovering insights through analytics, and using data to support sustainable solutions. I have experience with Python, SQL, Tableau, AWS, and more.
+    </p>
+  </section>
 
-      </div>
-      <div class="about-img"> 
-         <img src="assets/profile.png" alt="">
-      </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>RiskOps Automated QA Pipeline</h3>
+      <p>Streamlined risk ticket data using APIs, automated QA checks, and published dashboards to Looker Studio.</p>
+    </div>
+    <div class="project">
+      <h3>Climate & Food Supply Analysis</h3>
+      <p>Analyzed Japan’s climate data and food prices to uncover trends and potential correlations.</p>
+    </div>
+    <div class="project">
+      <h3>Netflix Data Analysis</h3>
+      <p>Explored Netflix content trends, rating distributions, and genre popularity using Python.</p>
     </div>
   </section>
 
-<!--Project Section -->
-  <section id="project" class="project-section">
-    <h2>My Projects</h2>
-    <div class="filters filter-buttons">
-      <button class="filter-button active" data-filter="all">All</button>
-      <button class="filter-button" data-filter="bi">Business Intelligence</button>
-      <button class="filter-button" data-filter="de">Data Engineer</button>
-      <button class="filter-button" data-filter="da">Data Analysis</button>
-      <button class="filter-button" data-filter="wd">Web Development</button>
-    </div>
-  
-    <div class="project-grid">
-      <div class="project-item de"><img src="assets/pj_stedi.png" alt=""></div>
-      <div class="project-item de"><img src="assets/pj_sparkify.png" alt=""></div>
-      <div class="project-item da"><img src="assets/pj_netflix.png" alt=""></div>
-      <div class="project-item da"><img src="assets/pj_bo.png" alt=""></div>
-      <div class="project-item de"><img src="assets/pj_riskops.png" alt=""></div>
-      <div class="project-item da"><img src="assets/pj_cropsjp.png" alt=""></div>
-      <div class="project-item bi"><img src="assets/pj_divy.png" alt=""></div>
-      <div class="project-item bi"><img src="assets/pj_superstore.png" alt=""></div>
-    </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: pakatip@example.com</p>
+    <p>GitHub: <a href="https://github.com/pakatipk" target="_blank" style="color:#aad4ff">github.com/pakatipk</a></p>
   </section>
 
-<!--Resume Section -->
-<section id="resume" class="resume-section">
-  <h2 class="text-center">My Resume</h2>
-  <div class="text-center mt-3">
-    <a href="resume_en.html" target="_blank" class="expand-btn me-2">EN</a>
-    <a href="resume_jp.html" target="_blank" class="expand-btn">JP</a>
-  </div>
-</section>
+  <footer>
+    <p>&copy; 2025 Pakatip Kasai. All rights reserved.</p>
+  </footer>
 
-<!--Contact Section -->
-<section class="contact-section" id="contact">
-  <h2>Contact</h2>
-  <div id="contact-wrapper">
-    <p>Have a question or want to work together? Send me a message below.</p>
-    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/kasai.pakatip@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
-
-<footer class="site-footer">
-  <div class="footer-socials">
-    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://github.com/yourhandle" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-  </div>
-
-  <p class="footer-credit">Pakatip Kasai © 2025</p>
-</footer>
-
 </html>
-
-  
