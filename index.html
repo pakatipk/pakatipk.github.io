@@ -3,54 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakatip's Portfolio</title>
+  <title data-i18n="title.heading">Pakatip Kasai's Portfolio</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS (required for navbar collapse) -->
+
 </head>
 <body>
-  <header>
-    <h1>Pakatip Kasai</h1>
-    <p>Data Analyst | Data Engineer | Portfolio</p>
+  <!-- Header Section -->
+  <header class="hero-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent fixed-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">
+          <img src="assets/logo.png" alt="Logo" height="50">
+        </a>
+  
+          <!-- Right: Toggles -->
+          <div class="d-flex align-items-center gap-3">
+            <i class="fas fa-moon text-secondary"></i>
+            <label class="switch m-0">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+            <div class="language-toggle ms-2">
+              <a href="#" id="langEN" class="lang-link active" data-i18n="lang.en">EN</a> |
+              <a href="#" id="langJP" class="lang-link" data-i18n="lang.jp">JP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
+  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a data professional passionate about building automated pipelines, uncovering insights through analytics, and using data to support sustainable solutions. I have experience with Python, SQL, Tableau, AWS, and more.
-    </p>
+    <div  class="about-section">
+      <div class="about-text">
+        <h2 data-i18n="about.heading">Hi, I'm Bee 👋 </h2>
+        <p data-i18n="about.p1">
+          I'm a <strong><span id="position">data analyst</span></strong> and <strong><span id="position">engineer</span></strong>, and a <span id="position"><strong>full-stack web developer</strong></span> in the making.
+        </p>        
+        <p data-i18n="about.p2">
+          Over the past few years, I’ve worked on data pipelines, dashboards, and risk systems – helping teams clean, structure, and make sense of their data. I’ve contributed to projects in areas like localization, security, and sustainability.
+        </p>
+        <p data-i18n="about.p3">
+          Recently, I’ve been diving deeper into <strong>web development</strong>, learning how to build both <strong>backend</strong> and <strong>frontend</strong> web applications, because I want to bring ideas to life from start to finish.
+        </p>
+        <p data-i18n="about.p4">
+          I'm still exploring and expanding my skills every day, and I love connecting with others who are on similar paths.
+        </p>
+
+      </div>
+      <div class="about-img"> 
+         <img src="assets/profile.png" alt="">
+      </div>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>RiskOps Automated QA Pipeline</h3>
-      <p>Streamlined risk ticket data using APIs, automated QA checks, and published dashboards to Looker Studio.</p>
+<!--Project Section -->
+  <section id="project" class="project-section">
+    <h2 data-i18n="project.heading">My Projects</h2>
+    <div class="filters filter-buttons">
+      <button class="filter-button active" data-filter="all" data-i18n="project.all">All</button>
+      <button class="filter-button" data-filter="bi" data-i18n="project.bi">Business Intelligence</button>
+      <button class="filter-button" data-filter="de" data-i18n="project.de">Data Engineering</button>
+      <button class="filter-button" data-filter="da" data-i18n="project.da">Data Analysis</button>
+      <button class="filter-button" data-filter="wd" data-i18n="project.wd">Web Development</button>
     </div>
-    <div class="project">
-      <h3>Climate & Food Supply Analysis</h3>
-      <p>Analyzed Japan’s climate data and food prices to uncover trends and potential correlations.</p>
-    </div>
-    <div class="project">
-      <h3>Netflix Data Analysis</h3>
-      <p>Explored Netflix content trends, rating distributions, and genre popularity using Python.</p>
+  
+    <div class="project-grid">
+      <div class="project-item de">
+        <a href="https://github.com/pakatipk/STEDI-human-balance-analytics/blob/main/README.md" class="project-link" target="_blank" rel="noopener">
+          <img src="assets/pj_stedi.png" alt="STEDI Human Balance Analytics">
+          <div class="overlay">
+            <span>STEDI Human Balance Analytics</span>
+          </div>
+        </a>
+      </div>
+      <div class="project-item de">
+        <a href="https://github.com/pakatipk/Sparkify/blob/main/README.md" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_sparkify.png" alt="">
+        <div class="overlay">
+          <span>Sparkify</span>
+        </div>
+      </a>
+      </div>
+      <div class="project-item da">
+        <a href="https://github.com/pakatipk/Netflix_DA" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_netflix.png" alt="">
+        <div class="overlay">
+          <span>Netflix Content Explorer</span>
+        </div>
+      </a>
+      </div>
+      <div class="project-item da">
+        <a href="https://github.com/pakatipk/boxoffice_scraping_analysis" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_bo.png" alt="">
+        <div class="overlay">
+          <span>Box Office Breakdown</span>
+        </div>
+      </a>
+      </div>
+      <div class="project-item de">
+        <a href="https://github.com/pakatipk/risk-data-pipeline/blob/temp-branch/README.md" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_riskops.png" alt="">
+        <div class="overlay">
+          <span>RiskOps QA Pipeline</span>
+        </div>
+      </a>
+      </div>
+      <div class="project-item da">
+        <a href="" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_cropsjp.png" alt="">
+        <div class="overlay">
+          <span>Climate & Crop Flow in Japan</span>
+        </div>
+        </a>
+      </div>
+      <div class="project-item bi">
+        <a href="https://public.tableau.com/app/profile/pakatip.kasai/viz/DivvyDataAnalysis_17153555766020/MapKPIs" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_divy.png" alt="">
+        <div class="overlay">
+          <span>Divvy Bikeshare Dashboard</span>
+        </div>
+        </a>
+      </div>
+      <div class="project-item bi">
+        <a href="https://public.tableau.com/app/profile/pakatip.kasai/viz/SuperstoreSalesAnalysis2016-2020/DiscountbyCatogySub-category" class="project-link" target="_blank" rel="noopener">
+        <img src="assets/pj_superstore.png" alt="">
+        <div class="overlay">
+          <span>Superstore Sales Insights</span>
+        </div>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: pakatip@example.com</p>
-    <p>GitHub: <a href="https://github.com/pakatipk" target="_blank" style="color:#aad4ff">github.com/pakatipk</a></p>
-  </section>
+<!--Resume Section -->
+<section id="resume" class="resume-section">
+  <h2 class="text-center" data-i18n="resume.heading">My Resume</h2>
+  <div class="text-center mt-3">
+    <a href="resume_en.html" target="_blank" class="expand-btn me-2" data-i18n="lang.en">EN</a>
+    <a href="resume_jp.html" target="_blank" class="expand-btn" data-i18n="lang.jp">JP</a>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Pakatip Kasai. All rights reserved.</p>
-  </footer>
+<!--Contact Section -->
+<section class="contact-section" id="contact">
+  <h2 data-i18n="contact.heading">Contact</h2>
+  <div id="contact-wrapper">
+    <p data-i18n="contact.p1">Have a question or want to work together? Send me a message below.</p>
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/kasai.pakatip@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="contact.namePlaceholder" required>
+      <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="contact.emailPlaceholder" required>
+      <textarea name="message" rows="5" placeholder="Your Message" data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit" data-i18n="contact.submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="script.js"></script>
+
 </body>
+
+
+<footer class="site-footer">
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/pakatipk/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:kasai.pakatip@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/pakatipk" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+  </div>
+
+  <p class="footer-credit">Pakatip Kasai © 2025</p>
+</footer>
+
 </html>
+
+  
