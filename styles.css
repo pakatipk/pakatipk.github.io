@@ -56,7 +56,7 @@
   }
   
   body.dark-mode .navbar {
-    background-color: #1e1e1e !important;
+    background-color: transparent;
   }
   
   body.dark-mode .nav-link {
