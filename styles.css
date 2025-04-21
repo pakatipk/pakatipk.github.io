@@ -169,9 +169,9 @@
     padding: 2rem;
     padding-top: 120px;
   }
-  
-  #position {
-    color: #FC5185;
+
+.job-position {
+    color: #FC5185 !important;
   }
   
   .about-text h2,
