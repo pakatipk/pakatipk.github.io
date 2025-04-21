@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // About Section
       "about.heading":             "こんにちは、ビーです 👋",
-      "about.p1":                  `私は<strong><span class="job-position">データアナリスト</span></strong>兼<strong><span class="job-position">エンジニア</span></strong>で、<strong><span class="job-position">フルスタック Web 開発者</span></strong>を目指しています。`,
-      "about.p2":                  "ここ数年、データパイプライン、ダッシュボード、リスクシステムに取り組み、チームがデータをクリーンアップ、構造化し、分析しやすくするお手伝いをしてきました。ローカリゼーション、セキュリティ、サステナビリティなどのプロジェクトにも貢献しました。",
-      "about.p3":                  '最近は<strong>Web開発</strong>にさらに深く取り組んでおり、<strong>バックエンド</strong>と<strong>フロントエンド</strong>の両方のWebアプリケーションを構築しています。',
-      "about.p4":                  "毎日スキルを探求し、拡張することを楽しんでおり、同じ道を歩む方々とつながることが大好きです。",
+      "about.p1":                  `私は<strong><span class="job-position">データアナリスト</span></strong>兼<strong><span class="job-position">エンジニア</span></strong>で、現在<strong><span class="job-position">フルスタック Web 開発者</span></strong>を目指しています。`,
+      "about.p2":                  "ここ数年の実績としてはデータパイプライン、ダッシュボード、リスクシステムに取り組みました。チームがデータをクリーンアップして構造化し、分析しやすくするサポートの実行、またローカリゼーション、セキュリティ、サステナビリティといったプロジェクトも担いました。",
+      "about.p3":                  '最近では<strong>Web開発</strong>にさらに力を入れており、<strong>バックエンド</strong>と<strong>フロントエンド</strong>両面のWebアプリケーションを構築しています。',
+      "about.p4":                  "日々新しいスキルを発見・探求し、成長することに熱量を持っております。同じ目標を持つ方々とお繋がりすることが大好きです。",
 
       // Project Section
-      "project.heading":           "私のプロジェクト",
+      "project.heading":           "My Project",
       "project.all":               "全て",
       "project.bi":                "ビジネスインテリジェンス",
       "project.de":                "データエンジニアリング",
