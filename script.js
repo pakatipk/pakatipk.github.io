@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
-
+  
 
   // ————————————————
   // Filter logic
@@ -194,21 +194,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // Dark Mode Toggle
   // ————————————————
   const darkToggle = document.getElementById('darkModeToggle');
-  const body       = document.body;
-  if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-    if (darkToggle) darkToggle.checked = true;
-  }
-  if (darkToggle) {
-    darkToggle.addEventListener('change', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'enabled');
-      } else {
-        localStorage.removeItem('dark-mode');
-      }
-    });
-  }
+const body = document.body;
+// navBar is already declared earlier — no need to declare again
+
+if (localStorage.getItem('dark-mode') === 'enabled') {
+  body.classList.add('dark-mode');
+  if (darkToggle) darkToggle.checked = true;
+  navBar.classList.remove('navbar-light');
+  navBar.classList.add('navbar-dark');
+}
+
+if (darkToggle) {
+  darkToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('dark-mode', 'enabled');
+      navBar.classList.remove('navbar-light');
+      navBar.classList.add('navbar-dark');
+    } else {
+      localStorage.removeItem('dark-mode');
+      navBar.classList.remove('navbar-dark');
+      navBar.classList.add('navbar-light');
+    }
+  });
+}
+
+  
+
+  
 
   // ————————————————
   // Bootstrap mobile menu: auto‑close

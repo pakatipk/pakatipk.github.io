@@ -12,10 +12,6 @@
     line-height: 1.6;
   }
   
-  /* Logo */
-  .navbar-brand img {
-    height: 90px;
-  }
 
 /* Nav links: base style */
 .navbar-nav .nav-link {
@@ -474,4 +470,15 @@
 .project-item:hover .overlay {
   opacity: 1;
 }
+
+.navbar-brand img {
+  height: 70px;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    height: 55px;
+  }
+}
+
 
