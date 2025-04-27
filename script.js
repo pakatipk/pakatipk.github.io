@@ -133,22 +133,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // ————————————————
   const navBar = document.querySelector('.navbar');
   let lastScrollY = window.scrollY;
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
+  let ticking = false;
   
-    if (currentY < 10) {
-      // At top of page → always show navbar
-      navBar.classList.remove('nav-hidden');
-    } else if (currentY > lastScrollY) {
-      // Scrolling down → hide navbar
-      navBar.classList.add('nav-hidden');
-    } else {
-      // Scrolling up → show navbar
-      navBar.classList.remove('nav-hidden');
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        const currentY = window.scrollY;
+  
+        if (currentY <= 0) {
+          // Very top of page
+          navBar.classList.remove('nav-hidden');
+        } else if (currentY > lastScrollY + 10) {
+          // Scrolling down (with enough distance) → hide
+          navBar.classList.add('nav-hidden');
+        } else if (currentY < lastScrollY - 10) {
+          // Scrolling up (with enough distance) → show
+          navBar.classList.remove('nav-hidden');
+        }
+  
+        lastScrollY = currentY;
+        ticking = false;
+      });
+  
+      ticking = true;
     }
-  
-    lastScrollY = currentY <= 0 ? 0 : currentY;
   });
+  
 
   // ————————————————
   // Filter logic
