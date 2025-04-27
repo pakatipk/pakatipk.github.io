@@ -135,12 +135,19 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {
     const currentY = window.scrollY;
-    if (currentY > lastScrollY) {
+  
+    if (currentY < 5) {
+      // At top of page → always show navbar
+      navBar.classList.remove('nav-hidden');
+    } else if (currentY > lastScrollY) {
+      // Scrolling down → hide navbar
       navBar.classList.add('nav-hidden');
     } else {
+      // Scrolling up → show navbar
       navBar.classList.remove('nav-hidden');
     }
-    lastScrollY = currentY;
+  
+    lastScrollY = currentY <= 0 ? 0 : currentY;
   });
 
   // ————————————————
