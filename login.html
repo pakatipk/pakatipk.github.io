@@ -38,6 +38,8 @@
         console.log('Access Token:', data.access_token);
         localStorage.setItem('access_token', data.access_token);
         result.textContent = 'Login successful! ✅';
+        window.location.href = 'admin.html';
+
       } else {
         result.textContent = 'Login failed ❌';
       }
