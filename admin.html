@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Page</title>
+</head>
+<body>
+  <h1>Welcome to the Admin Page! 🎉</h1>
+  <p>You are logged in.</p>
+
+  <script>
+    // Check if token exists in localStorage
+    const token = localStorage.getItem('access_token');
+
+    if (!token) {
+      // If no token, redirect to login page
+      alert('You must log in first!');
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
