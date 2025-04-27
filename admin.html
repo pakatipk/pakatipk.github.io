@@ -17,6 +17,13 @@
       alert('You must log in first!');
       window.location.href = 'login.html';
     }
+
+    const logoutButton = document.getElementById('logoutButton');
+    logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('access_token');  // delete token
+    alert('You have been logged out!');
+    window.location.href = 'login.html';      // go back to login page
+  });
   </script>
 </body>
 </html>
