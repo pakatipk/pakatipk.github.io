@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', () => {
     const currentY = window.scrollY;
   
-    if (currentY < 5) {
+    if (currentY < 10) {
       // At top of page → always show navbar
       navBar.classList.remove('nav-hidden');
     } else if (currentY > lastScrollY) {
