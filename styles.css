@@ -49,6 +49,21 @@
   
   }
 
+  .custom-navbar-login {
+    background-color: #00c2cb; /* turquoise like EN button */
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .custom-navbar-login:hover {
+    background-color: #ff6b9b; /* pink on hover like JP button */
+    color: white;
+  }
+
   /* Dark Mode Styles */
   body.dark-mode {
     background-color: #1e1e1e;
