@@ -413,13 +413,6 @@
     }
   }
   
-  /* in case collapse is open on larger screens for testing: */
-  .navbar-collapse {
-    background-color: #ffffff;
-  }
-  body.dark-mode .navbar-collapse {
-    background-color: #1e1e1e !important;
-  }
 
   @media (max-width: 767.98px) {
     /* shrink each item to its content and give some vertical spacing */
@@ -481,4 +474,34 @@
   }
 }
 
+/* Light mode navbar */
+.navbar-colored {
+  background-color: white !important;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+/* Dark mode navbar */
+body.dark-mode .navbar-colored {
+  background-color: #222 !important; /* or #111 or any dark color you prefer */
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* optional: light shadow */
+}
+
+/* Mobile: flex column, right-align items */
+@media (max-width: 767.98px) {
+  .navbar-collapse .d-flex {
+    flex-direction: column;
+    /* align-items: flex-end; */
+    text-align: center;
+  }
+
+  .navbar-collapse .d-flex > div {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  .navbar-collapse .d-flex > div:last-child {
+    border-bottom: none;
+  }
+}

@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
       "lang.en":                   "EN",
       "lang.jp":                   "JP",
 
+      // Home
+      "nav-home-button":           "Home",
+
+      // login
+      "login":                     "Login",
+      "login-header":              "Login",
+      "login-username":            "Username",
+      "login-password":            "Password",
+      "login-button":              "Login",
+
       // About Section
       "about.heading":             "Hi, I’m Bee 👋",
       "about.p1":                  `I'm a <strong><span class="job-position">data analyst</span></strong> and <strong><span class="job-position">engineer</span></strong>, and a <strong><span class="job-position">full‑stack web developer</span></strong> in the making.`,
@@ -48,6 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Language labels
       "lang.en":                   "英語",
       "lang.jp":                   "日本語",
+
+      // Home
+      "nav-home-button":           "ホーム",
+
+      // login
+      "login":                     "ログイン",
+      "login-header":              "ログイン",
+      "login-username":            "ユーザーネーム",
+      "login-password":            "パスワード",
+      "login-button":              "ログイン",
 
       // About Section
       "about.heading":             "こんにちは、ビーです 👋",
@@ -132,23 +152,41 @@ document.addEventListener("DOMContentLoaded", function () {
   // SCROLL‑HIDE NAVBAR
   // ————————————————
   const navBar = document.querySelector('.navbar');
-  let lastScrollY = window.scrollY;
-  
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
-  
-    if (currentY <= 10) {
-      navBar.classList.remove('nav-hidden');
-    } else if (currentY > lastScrollY + 15) {
-      navBar.classList.add('nav-hidden');
-      lastScrollY = currentY;
-    } else if (currentY < lastScrollY - 5) {
-      navBar.classList.remove('nav-hidden');
-      lastScrollY = currentY;
-    }
-  });
-  
-  
+let lastScrollY = window.scrollY;
+
+function handleScroll() {
+  const currentY = window.scrollY;
+  const isMobile = window.innerWidth <= 768;
+
+  // 1. Bounce hide/show navbar (keep your smart bounce)
+  if (currentY <= 10) {
+    navBar.classList.remove('nav-hidden');
+  } else if (currentY > lastScrollY + 15) {
+    navBar.classList.add('nav-hidden');
+  } else if (currentY < lastScrollY - 5) {
+    navBar.classList.remove('nav-hidden');
+  }
+
+  // 2. Background color control
+  if (isMobile) {
+    // Always show colored background on mobile
+    navBar.classList.add('navbar-colored');
+    navBar.classList.remove('bg-transparent');
+  } else {
+    // Always transparent on desktop
+    navBar.classList.remove('navbar-colored');
+    navBar.classList.add('bg-transparent');
+  }
+
+  lastScrollY = currentY <= 0 ? 0 : currentY;
+}
+
+// Attach scroll and resize
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', handleScroll);
+
+
+
 
   // ————————————————
   // Filter logic
@@ -247,5 +285,5 @@ if (darkToggle) {
       bsCollapse.hide();
     }
   });
-
+  handleScroll(); 
 });
