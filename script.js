@@ -145,8 +145,12 @@ if (loginDiv) {
   if (token) {
     // replace the Login link with Home, My Dashboard, and Sign out
     loginDiv.innerHTML = `
-      <a href="/mydashboard/" class="custom-navbar-login">My Dashboard</a>
-      <button id="signout-btn" class="custom-navbar-login">Sign out</button>
+      <div>
+        <a href="/mydashboard/" class="custom-navbar-login">My Dashboard</a>
+      </div>
+      <div>
+        <button id="signout-btn" class="custom-navbar-login">Sign out</button>
+      </div>
     `;
     // re-apply translations (so “Home” gets localized)
     const lang = localStorage.getItem('language') || 'en';
