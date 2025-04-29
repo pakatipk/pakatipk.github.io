@@ -145,7 +145,6 @@ if (loginDiv) {
   if (token) {
     // replace the Login link with Home, My Dashboard, and Sign out
     loginDiv.innerHTML = `
-      <a href="/" data-i18n="nav-home-button"></a>
       <a href="/mydashboard/" class="custom-navbar-login">My Dashboard</a>
       <button id="signout-btn" class="custom-navbar-login">Sign out</button>
     `;

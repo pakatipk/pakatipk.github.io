@@ -169,6 +169,21 @@
     color: #FC5185;
   }
   
+  a.custom-navbar-login,
+  button.custom-navbar-login {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    background-color: #00c2cb;
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+
   /* Section Styles */
   .about-section {
     display: grid;
