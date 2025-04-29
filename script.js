@@ -137,6 +137,32 @@ document.addEventListener("DOMContentLoaded", function () {
   applyLanguage(savedLang);
 
   // ————————————————
+// Swap Login for Home/Dashboard/Sign-out when logged in
+// ————————————————
+const loginDiv = document.getElementById('login-button');
+if (loginDiv) {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    // replace the Login link with Home, My Dashboard, and Sign out
+    loginDiv.innerHTML = `
+      <a href="/" data-i18n="nav-home-button"></a>
+      <a href="/mydashboard/" class="custom-navbar-login">My Dashboard</a>
+      <button id="signout-btn" class="custom-navbar-login">Sign out</button>
+    `;
+    // re-apply translations (so “Home” gets localized)
+    const lang = localStorage.getItem('language') || 'en';
+    applyLanguage(lang);
+
+    // wire up Sign out
+    document.getElementById('signout-btn')
+      .addEventListener('click', () => {
+        localStorage.removeItem('access_token');
+        window.location.href = '/';
+      });
+  }
+}
+
+  // ————————————————
   // 4) Hook up your EN/JP toggles
   // ————————————————
   document.getElementById("langEN").addEventListener("click", e => {
@@ -184,9 +210,6 @@ function handleScroll() {
 // Attach scroll and resize
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('resize', handleScroll);
-
-
-
 
   // ————————————————
   // Filter logic
@@ -256,10 +279,6 @@ if (darkToggle) {
     }
   });
 }
-
-  
-
-  
 
   // ————————————————
   // Bootstrap mobile menu: auto‑close
