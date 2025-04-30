@@ -1,35 +1,56 @@
-name: Build & Publish MyDashboard
+name: Deploy MyDashboard to User Site
 
+# Listen for dispatches named "my-dashboard-updated"  
 on:
-  push:
-    paths:
-      - 'my-dashboard/**' 
-      - '.github/workflows/**'
+  repository_dispatch:
+    types: [my-dashboard-updated]
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: Set up Node
+    steps:
+      # 1️⃣ Checkout the user-site repo (pakatipk.github.io)
+      - name: Checkout user-site repo
+        uses: actions/checkout@v3
+
+      # 2️⃣ Checkout the my-dashboard repo into a subfolder
+      - name: Checkout MyDashboard code
+        uses: actions/checkout@v3
+        with:
+          repository: pakatipk/my-dashboard
+          token: ${{ secrets.MY_DASHBOARD_TOKEN }}
+          path: my-dashboard
+
+      # 3️⃣ Set up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install & Build
+      # 4️⃣ Install & build MyDashboard inside that folder
+      - name: Build MyDashboard
+        working-directory: my-dashboard
         run: |
-          cd my-dashboard
           npm ci
           npm run build
 
-      - name: Deploy to mydashboard/
+      # 5️⃣ Copy the freshly built files into the "mydashboard/" folder at the root
+      - name: Copy build to user site
         run: |
-          # copy build output into repo
           rm -rf mydashboard
-          cp -r my-dashboard/dist mydashboard
+          cp -r my-dashboard/mydashboard mydashboard
+
+      # 6️⃣ Commit & push the update back to main
+      - name: Commit and push
+        run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add mydashboard
-          git commit -m "auto-deploy MyDashboard (${GITHUB_SHA::7})"
+          git commit -m "ci: update MyDashboard from my-dashboard repo"
           git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
