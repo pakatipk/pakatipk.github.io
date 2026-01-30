@@ -22,11 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "login-button":              "Login",
 
       // About Section
-      "about.heading":             "Hi, I’m Bee 👋",
-      "about.p1":                  `I'm a <strong><span class="job-position">data analyst</span></strong> and <strong><span class="job-position">engineer</span></strong>, and a <strong><span class="job-position">full‑stack web developer</span></strong> in the making.`,
-      "about.p2":                  "Over the past few years, I’ve worked on data pipelines, dashboards, and risk systems – helping teams clean, structure, and make sense of their data. I’ve contributed to projects in areas like localization, security, and sustainability.",
-      "about.p3":                  'Recently, I’ve been diving deeper into <strong>web development</strong>, learning how to build both <strong>backend</strong> and <strong>frontend</strong> web applications, because I want to bring ideas to life from start to finish.',
-      "about.p4":                  "I'm still exploring and expanding my skills every day, and I love connecting with others who are on similar paths.",
+      "about.heading": "Hi, I'm Bee 👋",
+      "about.p1": `I started my journey working with <strong><span class="job-position">data analysis</span></strong> and <strong><span class="job-position">engineering</span></strong>, and along the way became curious about how systems, tools, and people come together to build products.`,
+      "about.p2": "Over the past few years, I’ve worked on data pipelines, dashboards, and risk systems – helping teams clean, structure, and make sense of their data. I’ve contributed to projects in areas like localization and security.",
+      "about.p3": "Today, my work leans more toward <strong>project management and delivery</strong>, but I still enjoy learning, experimenting, and staying close to the technical side.",
+      "about.p4": "This space is a snapshot of where I am now - and where I’ve been.",
+
 
       // Project Section
       "project.heading":           "My Projects",
