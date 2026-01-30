@@ -71,10 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // About Section
       "about.heading":             "こんにちは、ビーです 👋",
-      "about.p1":                  `私は<strong><span class="job-position">データアナリスト</span></strong>兼<strong><span class="job-position">エンジニア</span></strong>で、現在<strong><span class="job-position">フルスタック Web 開発者</span></strong>を目指しています。`,
-      "about.p2":                  "ここ数年の実績としてはデータパイプライン、ダッシュボード、リスクシステムに取り組みました。チームがデータをクリーンアップして構造化し、分析しやすくするサポートの実行、またローカリゼーション、セキュリティ、サステナビリティといったプロジェクトも担いました。",
-      "about.p3":                  '最近では<strong>Web開発</strong>にさらに力を入れており、<strong>バックエンド</strong>と<strong>フロントエンド</strong>両面のWebアプリケーションを構築しています。',
-      "about.p4":                  "日々新しいスキルを発見・探求し、成長することに熱量を持っております。同じ目標を持つ方々とお繋がりすることが大好きです。",
+      "about.p1":                  `私は<strong><span class="job-position">データ分析</span></strong>や<strong><span class="job-position">エンジニアリング</span></strong>の仕事からキャリアをスタートしました。その過程で、システムやツール、そして人がどのように関わり合いながらプロダクトが作られていくのかに興味を持つようになりました。`,
+      "about.p2":                  "これまでの数年間は、データパイプラインやダッシュボード、リスク関連の仕組みに携わり、チームがデータを整理し、構造化し、理解しやすくするサポートをしてきました。ローカリゼーションやセキュリティに関わるプロジェクトにも参加してきました。",
+      "about.p3":                  "現在は<strong>プロジェクトマネジメントやデリバリー</strong>に軸足を置いた仕事が中心ですが、学び続けることや試行錯誤すること、そして技術に近いところで考えることは今も変わらず好きです。",
+      "about.p4":                  "この場所は、今の私と、これまで歩んできた道のりを切り取ったスナップショットのようなものです。",
 
       // Project Section
       "project.heading":           "My Project",
