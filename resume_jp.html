@@ -1,162 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | Bee</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <title>職務経歴書 | Pakatip Kasai</title>
   <style>
-    *{
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    * {
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     }
 
-    body{
-        max-width: 800px;
-        margin: auto;
-        background: #FFFFFF;
-        padding: 10px 10px 10px 10px;
+    body {
+      max-width: 820px;
+      margin: auto;
+      background: #fff;
+      padding: 28px;
+      color: #222;
+      line-height: 1.55;
     }
 
-    body h1{
-        font-size: 55px;
-        color: #5c5c5c;
+    h1 {
+      font-size: 26px;
+      text-align: center;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .meta {
+      text-align: center;
+      font-size: 12.5px;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .meta span { white-space: nowrap; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 14px 0;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 18px 0 8px 0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #444;
+      letter-spacing: 0.3px;
+    }
+
+    h3 {
+      font-size: 14.5px;
+      margin: 12px 0 6px 0;
+    }
+
+    .company { font-weight: 700; }
+    .role { font-weight: 600; }
+    .period { color: #444; font-style: italic; }
+
+    p {
+      margin: 0 0 8px 0;
+      font-size: 13.5px;
+    }
+
+    ul {
+      margin: 6px 0 10px 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      font-size: 13.5px;
+    }
+
+    .section-note {
+      font-size: 12.5px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 18px;
+    }
+
+    .card {
+      padding: 10px 12px;
+      background: #f7f7f7;
+      border-left: 4px solid #888;
+    }
+
+    .card h4 {
+      margin: 0 0 6px 0;
+      font-size: 13.5px;
+    }
+
+    .card ul { margin: 0; }
+
+    a { color: #000; text-decoration: none; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      margin-top: 18px;
+    }
+
+    /* Page break helpers (screen + print) */
+    .page-break { height: 0; border: 0; margin: 0; }
+    .keep-together { break-inside: avoid; page-break-inside: avoid; }
+    .avoid-break-after { break-after: avoid; page-break-after: avoid; }
+
+    /* PRINT */
+    @page { size: A4; margin: 12mm; }
+
+    @media print {
+      body { padding: 0; max-width: none; }
+
+      /* force a clean page split */
+      .page-break { break-before: page; page-break-before: always; }
+
+      /* avoid ugly splits */
+      h2, h3 { break-after: avoid; page-break-after: avoid; }
+      ul, .card, .keep-together { break-inside: avoid; page-break-inside: avoid; }
+
+      /* Optional: show URL after links? currently disabled */
+      a::after { content: ""; }
+
+      /* Footer page numbers */
+      body { counter-reset: page; }
+      .print-footer {
+        position: fixed;
+        bottom: 6mm;
+        left: 0;
+        right: 0;
         text-align: center;
-        margin-bottom: 15px;
+        font-size: 11px;
+        color: #777;
+      }
+      .print-footer:after {
+        content: "ページ " counter(page) " / " counter(pages);
+      }
     }
-
-    ul li{
-        margin-bottom: 0.5rem;
-    }
-
-    p{
-        line-height: 1.3rem;
-    }
-
   </style>
 </head>
+
 <body>
-    <center><small>
-        <a href="https://www.linkedin.com/in/pakatipk/">LinkedIn</a> ·
-        <a href="https://github.com/pakatipk/">Github</a> ·
-        <a href="mailto:kasai.pakatip@gmail.com">kasai.pakatip@gmail.com</a> · 
-        <a href="https://maps.app.goo.gl/siusaBuMaivckzyaA">福岡</a>
-    </small>
-    </center>
 
-    <h1 id="pakatip-kasai">笠井パカティップ</h1>
+  <h1>職務経歴書</h1>
+  <div class="meta">
+    <div>氏名：<strong>笠井 パカティップ</strong>（Pakatip Kasai）</div>
+    <div>
+      <span>所在地：福岡県</span> ・
+      <span>メール：kasai.pakatip@gmail.com</span> ・
+      <span>LinkedIn：linkedin.com/in/pakatipk</span> ・
+      <span>GitHub：github.com/pakatipk</span>
+    </div>
+    <div>作成日：2026年2月</div>
+  </div>
 
-    <hr>
+  <hr>
 
-    <blockquote>
-        <p>データガバナンスおよびメタデータ領域において、データワークフロー設計、品質チェックの自動化、BIダッシュボード構築の経験を持つアナリティクス・オペレーション担当者です。
-        Python、SQL、および各種BIツールを活用し、複雑なデータの構造化、手作業プロセスの削減、レポーティングの信頼性向上を支援してきました。
-        データ・業務プロセス・ツールの交差領域での改善を強みとしています。</p>
-    </blockquote>
+  <h2 class="avoid-break-after">職務要約</h2>
+  <p class="keep-together">
+    データガバナンスおよびメタデータ領域を中心に、データワークフロー設計、品質チェックの自動化、BIダッシュボード構築の実務経験を有しています。
+    Python・SQL・BIツールを活用し、複雑な業務データの構造化、レポーティング基盤の整備、手作業工程の削減を推進してきました。
+    現在はプロジェクトマネージャーとして、チームマネジメント、KPI管理、業務自動化設計を担当しています。
+  </p>
 
+  <h2 class="avoid-break-after">職務経歴</h2>
 
-    <hr>
+  <!-- PAGE 1: Welocalize + Rakuten -->
+  <div class="keep-together">
+    <h3><span class="company">Welocalize Japan</span> <span class="period">（2022年1月 ～ 現在）</span></h3>
 
-    <h2>職務経験</h2>
-
-    <h4><a href="https://www.welocalize.com/" target="_blank">Welocalize Japan</a>
-    <br>プロジェクトマネージャー, <em>2025年5月 – 現在</em>
-    <br>アシスタントプロジェクトマネージャー, <em>2024年1月 – 2024年11月</em>
-    <br>メタデータスペシャリスト, <em>2022年1月 – 2024年1月</em></h4>
-
+    <p class="role">プロジェクトマネージャー <span class="period">（2025年5月 ～ 現在）</span></p>
     <ul>
-        <li>グローバル配信サービス向けメタデータキュレーションプロジェクトにおいて、10名のチームをリード。</li>
-        <li>オンボーディング、トレーニング、日々のオペレーション管理を担当し、品質と納期の安定化を実現。</li>
-        <li>Power Appsおよび自動化ツールを活用し、パフォーマンス評価および日次工数管理の仕組みを設計・導入。</li>
-        <li>TableauおよびBIツールを用いて、プロジェクト進捗およびKPIの集中管理ダッシュボードを構築。</li>
-        <li>ツール連携と自動化により業務フローを改善し、手動作業およびレポート作成工数を削減。</li>
-        <li>Pythonを用いたXMLメタデータ品質チェックの自動化手法を企画・試作。</li>
-        <li>品質管理フレームワークおよび業務ガイドを整備し、レビュー工程の標準化を推進。</li>
-        <li>クライアント要件をレビュー基準および作業手順へ落とし込み、チームへ展開。</li>
-        <li>海外チームおよび関係者と連携し、メタデータ品質課題の解決を推進。</li>
+      <li>グローバル配信サービス向けメタデータキュレーション案件で、10名チームをリード。</li>
+      <li>オンボーディング／トレーニング／日次オペレーション管理を担当し、品質と納期の安定化を推進。</li>
+      <li>TableauおよびBIツールで進捗・KPIの集中管理ダッシュボードを構築し、運用可視化を強化。</li>
+      <li>Power Apps・自動化ツールを用い、パフォーマンス評価・日次工数管理の仕組みを設計・導入。</li>
+      <li>ツール連携と自動化により業務フローを改善し、手動調整・レポート作業の工数を削減。</li>
+      <li>Pythonを用いたXMLメタデータ品質チェック自動化の企画・試作（検証ロジックの設計含む）。</li>
     </ul>
 
-    <h4><a href="https://global.rakuten.com/corp/" target="_blank">楽天グループ株式会社</a>
-    <br>
-    データリスクアナリスト, <em>2024年11月 – 2025年4月</em></h4>
-
+    <p class="role">アシスタントプロジェクトマネージャー <span class="period">（2024年1月 ～ 2024年11月）</span></p>
     <ul>
-        <li>Pythonを用いてJiraおよびArcherのデータを統合し、XMLからJSONへの変換および構造化処理を実施、BIダッシュボードを構築。</li>
-        <li>リスクレポーティング用データの前処理および整形を自動化し、データ精度を向上。</li>
-        <li>社内システムのデータフロー、ガバナンスプロセス、セキュリティ統制を分析し、データリスクを特定。</li>
-        <li>ISO 30001フレームワークに基づくデータリスク評価プロセスに参画。</li>
-        <li>リスク対応プロセスにおける実務支援および関係部門へのアドバイスを実施。</li>
-        <li>技術部門および業務部門と連携し、データ構造の整理とレポーティング改善を推進。</li>
+      <li>メタデータQCワークフロー設計支援（レビュー基準の整備、検証観点の明文化）。</li>
+      <li>業務ガイド／品質管理フレームワーク／プロセス可視化ドキュメントを作成し、標準化を推進。</li>
+      <li>新規メンバー向けトレーニングを実施し、運用理解・品質安定化を支援。</li>
+      <li>海外拠点・関係者と連携し、品質課題の整理と解決を推進。</li>
     </ul>
 
-
-    <h4><a href="https://cmo-group.com/2022/page/home" target="_blank">CMO Public Company Limited</a>
-        <br>
-        CEO個人アシスタント（2018年11月 – 2019年6月）</h4>
+    <p class="role">メタデータスペシャリスト <span class="period">（2022年1月 ～ 2024年1月）</span></p>
     <ul>
-        <li>個人・業務のスケジュール管理、会議の調整、出張の手配</li>
-        <li>書類の整理、請求書や郵送物の処理、期限内の対応を確実に実施</li>
+      <li>大規模カタログのメタデータ品質管理（タグ付与・マッピングの整合性確認）。</li>
+      <li>検索精度／コンテンツ発見性の向上に向け、運用ルールに沿ったデータ整備を実施。</li>
     </ul>
+  </div>
 
-    <h4><a href="https://www.pttco.org/" target="_blank">PTTCO Ltd.</a>
-        <br>
-        プログラムコーディネーター（2017年2月 – 2018年10月）</h4>
+  <hr>
+
+  <div class="keep-together">
+    <h3><span class="company">楽天グループ株式会社</span> <span class="period">（2024年11月 ～ 2025年4月）</span></h3>
+    <p class="role">データリスクアナリスト</p>
     <ul>
-        <li>トレーニングプログラムの基準遵守を支援</li>
-        <li>各種プロジェクト向けに報告書や教材を作成（監査・カリキュラム更新・イベントなど）</li>
-        <li>チームの業務手順や管理業務をサポート</li>
+      <li>PythonでJira・Archerデータを統合し、XML→JSON変換と構造化処理を実施、BI向けデータを整備。</li>
+      <li>リスクレポーティング用データの前処理・整形を自動化し、データ精度と運用効率を改善。</li>
+      <li>社内システムのデータフロー、ガバナンス、セキュリティ統制を分析し、データリスクを特定・整理。</li>
+      <li>ISO 30001フレームワークに基づくデータリスク評価プロセスに参画（評価・対応検討の支援）。</li>
+      <li>技術部門・業務部門と連携し、データ構造の整理とレポーティング改善を推進。</li>
     </ul>
-    
-    <hr>
+  </div>
 
-    <h2>テクニカルスキル</h2>
+  <!-- FORCE PAGE 2 -->
+  <div class="page-break"></div>
 
+  <!-- PAGE 2: Earlier roles + skills + projects + education -->
+  <h2 class="avoid-break-after">その他の職務経歴</h2>
+
+  <div class="keep-together">
+    <h3><span class="company">CMO Public Company Limited</span> <span class="period">（2018年11月 ～ 2019年6月）</span></h3>
+    <p class="role">CEOパーソナルアシスタント</p>
     <ul>
-        <li><strong>プログラミング:</strong> Python, SQL</li>
-        <li><strong>データ分析ライブラリ:</strong> Pandas, scikit-learn（基礎レベル）</li>
-        <li><strong>クラウド・データ基盤:</strong> AWS（S3, Glue, Athena）</li>
-        <li><strong>BI・分析ツール:</strong> Tableau, DOMO, Power BI, Looker Studio, Excel</li>
-        <li><strong>統計手法:</strong> 回帰分析、A/Bテスト（基礎）</li>
-        <li><strong>自動化・開発ツール:</strong> Git, GitHub Actions（基礎）, Power Apps, 業務自動化ツール</li>
+      <li>経営層のスケジュール管理、会議調整、出張手配、文書管理などの管理業務を担当。</li>
+      <li>請求書・郵送物などの処理を行い、事務対応の正確性と期日管理を担保。</li>
     </ul>
+  </div>
 
-
-    <hr>
-
-    <h2>学歴</h2>
-
-    <h4>コベントリー大学（英国）
-    <br>
-    理学修士（石油・環境技術専攻）｜2015年 – 2016年</h4>
+  <div class="keep-together">
+    <h3><span class="company">PTTCO Ltd.</span> <span class="period">（2017年2月 ～ 2018年10月）</span></h3>
+    <p class="role">プログラムコーディネーター</p>
     <ul>
-        <li>優等で卒業</li>
-        <li>論文：テクノロジーの進化が北米の石油・ガス生産に与える影響をマルチ企業のデータで分析</li>
+      <li>研修プログラムが基準・ガイドラインに準拠するようプロジェクトマネージャーを支援。</li>
+      <li>レポート作成および研修教材の編集・更新を担当。</li>
+      <li>チーム運営および事務プロセスを支援。</li>
     </ul>
+  </div>
 
-    <h4>アサンプション大学（タイ）
-        <br>
-        工学士（コンピュータ・ネットワーク工学）｜2010年 – 2013年</h4>
-        <ul>
-            <li>卒業プロジェクト：Androidアプリ向けARアプリをJavaとUnityで開発。カメラで3Dオブジェクトを表示する画像認識とユーザー操作機能を実装。</li>
-        </ul>
+  <h2 class="avoid-break-after">スキル</h2>
+  <div class="grid">
+    <div class="card keep-together">
+      <h4>プログラミング</h4>
+      <ul><li>Python / SQL</li></ul>
+    </div>
 
-    <hr>
-
-    <h2>プロジェクトと課題</h2>
-    <ul>
-        <li><strong><a href="https://github.com/pakatipk/boxoffice_scraping_analysis">Box Office Breakdown</a></strong>: Pythonとpandasを用いてBox Office Mojoからの収益データを収集・可視化するスクレイピングプロジェクト</li>
-        <li><strong><a href="https://github.com/pakatipk/Netflix_DA">Netflix Content Explorer</a></strong>: Pythonとmatplotlibを使用し、Netflixのコンテンツ傾向を分析</li>
-        <li><strong><a href="https://github.com/pakatipk/risk-data-pipeline">RiskOps QA Pipeline</a></strong>: JiraとAirtableからデータを取得し、QAチェック後、BIツール向けに整形・出力する自動化パイプライン</li>
-        <li><strong><a href="https://github.com/pakatipk/STEDI-human-balance-analytics">STEDI Human Balance Analytics</a></strong>: AWS Glue, S3, Redshiftを使用してセンサーデータを処理するETLパイプライン</li>
-        <li><strong><a href="#">Climate & Crop Flow (Japan)</a></strong>: 日本における気温と降水量の変化が作物価格に与える影響を分析するETLプロジェクト</li>
-        <li><strong><a href="https://public.tableau.com/app/profile/pakatip.kasai/viz/DivvyDataAnalysis_17153555766020/MapKPIs">Divvy Dashboard</a></strong>: シカゴのバイクシェア利用状況をTableauで視覚化</li>
-        <li><strong><a href="https://public.tableau.com/app/profile/pakatip.kasai/viz/SuperstoreSalesAnalysis2016-2020/DiscountbyCatogySub-category">Superstore Sales Insights</a></strong>: 2016〜2020年のスーパーストアの売上データをTableauで分析</li>
+    <div class="card keep-together">
+      <h4>データ分析ライブラリ</h4>
+      <ul>
+        <li>Pandas</li>
+        <li>scikit-learn（基礎）</li>
       </ul>
-    
-    <hr>
-      
+    </div>
 
-  <footer style="text-align: center;">
-    &copy; 2026 笠井パカティップ | 最終更新日 年2026月2
+    <div class="card keep-together">
+      <h4>クラウド・データ基盤</h4>
+      <ul><li>AWS（S3 / Glue / Athena）</li></ul>
+    </div>
+
+    <div class="card keep-together">
+      <h4>BI・分析ツール</h4>
+      <ul>
+        <li>Tableau / DOMO / Power BI</li>
+        <li>Looker Studio / Excel</li>
+      </ul>
+    </div>
+
+    <div class="card keep-together">
+      <h4>統計手法</h4>
+      <ul>
+        <li>回帰分析</li>
+        <li>A/Bテスト（基礎）</li>
+      </ul>
+    </div>
+
+    <div class="card keep-together">
+      <h4>自動化・開発ツール</h4>
+      <ul>
+        <li>Git / GitHub Actions（基礎）</li>
+        <li>Power Apps / 業務自動化ツール</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="avoid-break-after">プロジェクト・取り組み</h2>
+  <ul class="keep-together">
+    <li><strong>RiskOps QA Pipeline</strong>：Jira・Airtable連携の自動QAパイプライン（データ抽出～整形～BI投入を想定）。</li>
+    <li><strong>STEDI Human Balance Analytics</strong>：AWS（Glue / S3 / Redshift等）を用いたデータパイプライン構築。</li>
+    <li><strong>Webスクレイピング分析</strong>：Pythonでデータ収集・前処理・可視化を実施。</li>
+    <li><strong>Climate &amp; Crop Flow（Japan）</strong>：気候データと作物・価格の関係を分析するETLプロジェクト（個人プロジェクト）。</li>
+  </ul>
+  <p class="section-note">※ 具体的な成果物URL（GitHub / Tableau Public等）は必要に応じて追記可能です。</p>
+
+  <h2 class="avoid-break-after">学歴</h2>
+  <div class="keep-together">
+    <h3>Coventry University（英国） <span class="period">（2015年～2016年）</span></h3>
+    <ul>
+      <li>石油・環境技術 修士（MSc）／優秀成績で修了</li>
+      <li>研究：北米の複数企業データを用いた石油・ガス生産における技術影響分析</li>
+    </ul>
+  </div>
+
+  <div class="keep-together">
+    <h3>Assumption University（タイ） <span class="period">（2010年～2013年）</span></h3>
+    <ul>
+      <li>コンピュータ・ネットワーク工学 学士</li>
+      <li>卒業制作：AR対応Androidアプリ（画像認識・3Dオブジェクト重畳表示）</li>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 2026 Pakatip Kasai | 最終更新：2026年2月
   </footer>
+
+  <!-- Print-only page number footer -->
+  <div class="print-footer" aria-hidden="true"></div>
+
 </body>
 </html>
